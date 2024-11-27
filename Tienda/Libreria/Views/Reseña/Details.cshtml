@@ -1,0 +1,58 @@
+﻿@model Libreria.Models.Reseña
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reseña</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Clientes.NombreCompleto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clientes.NombreCompleto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.NombreProducto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaReseña)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaReseña)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReseñaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
