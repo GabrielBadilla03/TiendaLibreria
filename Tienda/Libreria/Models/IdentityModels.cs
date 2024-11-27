@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -24,6 +25,46 @@ namespace Libreria.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Producto> Productos { get; set; }
+        public DbSet<Clientes> Clientes { get; set; }
+        public DbSet<Reseña> Reseñas { get; set; }
+        public DbSet<Ventas> Ventas { get; set; }
+        public DbSet<HistorialVenta> HistorialVentas { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+
+            modelBuilder.Entity<Producto>()
+                .HasRequired(p => p.Categoria)
+                .WithMany(c => c.Productos)
+                .HasForeignKey(p => p.CategoriaId);
+
+            modelBuilder.Entity<Reseña>()
+                .HasRequired(r => r.Producto)
+                .WithMany(p => p.Reseñas)
+                .HasForeignKey(r => r.CodigoProducto);
+
+            modelBuilder.Entity<Reseña>()
+                .HasRequired(r => r.Clientes)
+                .WithMany(c => c.Reseñas)
+                .HasForeignKey(r => r.CodigoCliente);
+
+            modelBuilder.Entity<Ventas>()
+                .HasRequired(v => v.Producto)
+                .WithMany()
+                .HasForeignKey(v => v.CodigoProducto);
+
+            modelBuilder.Entity<Ventas>()
+                .HasRequired(v => v.HistorialVenta)
+                .WithMany(h => h.Ventas)
+                .HasForeignKey(v => v.HistorialVentasId);
+
+            base.OnModelCreating(modelBuilder);
+        }
+
 
         public static ApplicationDbContext Create()
         {
