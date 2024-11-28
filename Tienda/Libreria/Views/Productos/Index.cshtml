@@ -1,75 +1,54 @@
 ﻿@model IEnumerable<Libreria.Models.Producto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado de Productos";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <h2 class="text-center mt-4 mb-4">Listado de Productos</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria.NombreCategoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NombreProducto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImagenProducto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descuento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Precio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DisponibilidadInventario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th></th>
-    </tr>
+    <link rel="stylesheet" href="~/Views/Css/estilos.css" />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Categoria.NombreCategoria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NombreProducto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImagenProducto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descuento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Precio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisponibilidadInventario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CodigoProducto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CodigoProducto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CodigoProducto })
-        </td>
-    </tr>
-}
+    <div class="text-right mb-3">
+        <a href="@Url.Action("Create")" class="btn btn-primary">Agregar Nuevo Producto</a>
+    </div>
 
-</table>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <img src="@item.ImagenProducto" class="card-img-top img-fluid" alt="@item.NombreProducto" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <h5 class="card-title text-truncate">@item.NombreProducto</h5>
+                        <p class="card-text text-muted">@item.Descripcion</p>
+                        <p class="card-text"><strong>Precio:</strong> $@item.Precio</p>
+                        <p class="card-text"><strong>Descuento:</strong> @item.Descuento%</p>
+                        <p class="card-text">
+                            <strong>Inventario:</strong> @item.DisponibilidadInventario
+                        </p>
+                        <p>
+                            @if (item.Estado == "Activo")
+                            {
+                                <span class="badge badge-success">Activo</span>
+                            }
+                            else
+                            {
+                                <span class="badge badge-danger">Inactivo</span>
+                            }
+                        </p>
+                    </div>
+
+                    <div class="card-footer text-center">
+                        <a href="@Url.Action("Edit", new { id = item.CodigoProducto })" class="btn btn-sm btn-warning mx-1">Editar</a>
+                        <a href="@Url.Action("Details", new { id = item.CodigoProducto })" class="btn btn-sm btn-info mx-1">Detalles</a>
+                        <a href="@Url.Action("Delete", new { id = item.CodigoProducto })" class="btn btn-sm btn-danger mx-1">Eliminar</a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

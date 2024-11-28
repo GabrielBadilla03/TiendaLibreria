@@ -1,88 +1,56 @@
 ﻿@model Libreria.Models.Producto
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Eliminar Producto";
 }
 
-<h2>Delete</h2>
+<div class="container mt-4">
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Producto</h4>
+    <link rel="stylesheet" href="~/Views/Css/estilos.css" />
+
+    <h2 class="text-center text-danger mb-4">Eliminar Producto</h2>
+
+    <h4 class="text-center">¿Estás seguro de que deseas eliminar este producto?</h4>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria.NombreCategoria)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Categoria.NombreCategoria)
-        </dd>
+    <dl class="row">
+        <dt class="col-sm-4 text-right font-weight-bold">Categoría:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Categoria.NombreCategoria)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreProducto)
-        </dt>
+        <dt class="col-sm-4 text-right font-weight-bold">Nombre:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreProducto)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombreProducto)
-        </dd>
+        <dt class="col-sm-4 text-right font-weight-bold">Descripción:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+        <dt class="col-sm-4 text-right font-weight-bold">Imagen:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.ImagenProducto)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+        <dt class="col-sm-4 text-right font-weight-bold">Descuento:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descuento) %</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagenProducto)
-        </dt>
+        <dt class="col-sm-4 text-right font-weight-bold">Precio:</dt>
+        <dd class="col-sm-8">$@Html.DisplayFor(model => model.Precio)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ImagenProducto)
-        </dd>
+        <dt class="col-sm-4 text-right font-weight-bold">Inventario Disponible:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.DisponibilidadInventario)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descuento)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Descuento)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DisponibilidadInventario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DisponibilidadInventario)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-
-        <dd>
+        <dt class="col-sm-4 text-right font-weight-bold">Estado:</dt>
+        <dd class="col-sm-8">
             @Html.DisplayFor(model => model.Estado)
         </dd>
-
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="@Url.Action("Index")" class="btn btn-secondary ml-2">Cancelar</a>
         </div>
     }
 </div>
+
+
+

@@ -44,9 +44,8 @@ namespace Libreria.Models
         [ForeignKey("CategoriaId")]
         public Categoria Categoria { get; set; }
 
+
         public ICollection<Reseña> Reseñas { get; set; }
        
-
-
     }
 }
