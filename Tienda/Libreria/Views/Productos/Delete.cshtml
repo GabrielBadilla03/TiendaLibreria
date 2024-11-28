@@ -23,9 +23,6 @@
         <dt class="col-sm-4 text-right font-weight-bold">Descripción:</dt>
         <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
 
-        <dt class="col-sm-4 text-right font-weight-bold">Imagen:</dt>
-        <dd class="col-sm-8">@Html.DisplayFor(model => model.ImagenProducto)</dd>
-
         <dt class="col-sm-4 text-right font-weight-bold">Descuento:</dt>
         <dd class="col-sm-8">@Html.DisplayFor(model => model.Descuento) %</dd>
 
@@ -39,6 +36,20 @@
         <dd class="col-sm-8">
             @Html.DisplayFor(model => model.Estado)
         </dd>
+
+        <dd class="col-sm-8">
+            @if (Model.ImagenProducto != null && Model.ImagenProducto.Length > 0)
+            {
+                string imageBase64 = Convert.ToBase64String(Model.ImagenProducto);
+                string imageSrc = string.Format("data:image/jpg;base64,{0}", imageBase64);
+                <img src="@imageSrc" alt="Imagen del Libro" width="300" />
+            }
+            else
+            {
+                <p>No hay imagen disponible</p>
+            }
+        </dd>
+
     </dl>
 
     @using (Html.BeginForm())

@@ -24,12 +24,12 @@
                         CodigoProducto = c.Int(nullable: false, identity: true),
                         NombreProducto = c.String(nullable: false, maxLength: 100),
                         Descripcion = c.String(nullable: false, maxLength: 500),
-                        ImagenProducto = c.Binary(nullable: false, maxLength: 500),
                         Descuento = c.Decimal(nullable: false, precision: 18, scale: 2),
                         Precio = c.Decimal(nullable: false, precision: 18, scale: 2),
                         DisponibilidadInventario = c.Int(nullable: false),
                         Estado = c.String(nullable: false, maxLength: 50),
                         CategoriaId = c.Int(nullable: false),
+                        ImagenProducto = c.Binary(),
                     })
                 .PrimaryKey(t => t.CodigoProducto)
                 .ForeignKey("dbo.Categorias", t => t.CategoriaId)
