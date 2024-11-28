@@ -177,6 +177,10 @@
     <Compile Include="Migrations\202411270507212_InitialCreate.Designer.cs">
       <DependentUpon>202411270507212_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202411280226338_ImgByte_LengthEdit.cs" />
+    <Compile Include="Migrations\202411280226338_ImgByte_LengthEdit.Designer.cs">
+      <DependentUpon>202411280226338_ImgByte_LengthEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -295,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Photos\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -326,6 +331,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202411270507212_InitialCreate.resx">
       <DependentUpon>202411270507212_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202411280226338_ImgByte_LengthEdit.resx">
+      <DependentUpon>202411280226338_ImgByte_LengthEdit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
