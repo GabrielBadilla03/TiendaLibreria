@@ -1,0 +1,67 @@
+﻿@model Libreria.Models.Producto
+
+@{
+    ViewBag.Title = "Eliminar Producto";
+}
+
+<div class="container mt-4">
+
+    <link rel="stylesheet" href="~/Views/Css/estilos.css" />
+
+    <h2 class="text-center text-danger mb-4">Eliminar Producto</h2>
+
+    <h4 class="text-center">¿Estás seguro de que deseas eliminar este producto?</h4>
+    <hr />
+
+    <dl class="row">
+        <dt class="col-sm-4 text-right font-weight-bold">Categoría:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Categoria.NombreCategoria)</dd>
+
+        <dt class="col-sm-4 text-right font-weight-bold">Nombre:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.NombreProducto)</dd>
+
+        <dt class="col-sm-4 text-right font-weight-bold">Descripción:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descripcion)</dd>
+
+        <dt class="col-sm-4 text-right font-weight-bold">Descuento:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Descuento) %</dd>
+
+        <dt class="col-sm-4 text-right font-weight-bold">Precio:</dt>
+        <dd class="col-sm-8">$@Html.DisplayFor(model => model.Precio)</dd>
+
+        <dt class="col-sm-4 text-right font-weight-bold">Inventario Disponible:</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.DisponibilidadInventario)</dd>
+
+        <dt class="col-sm-4 text-right font-weight-bold">Estado:</dt>
+        <dd class="col-sm-8">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dd class="col-sm-8">
+            @if (Model.ImagenProducto != null && Model.ImagenProducto.Length > 0)
+            {
+                string imageBase64 = Convert.ToBase64String(Model.ImagenProducto);
+                string imageSrc = string.Format("data:image/jpg;base64,{0}", imageBase64);
+                <img src="@imageSrc" alt="Imagen del Libro" width="300" />
+            }
+            else
+            {
+                <p>No hay imagen disponible</p>
+            }
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-danger">Eliminar</button>
+            <a href="@Url.Action("Index")" class="btn btn-secondary ml-2">Cancelar</a>
+        </div>
+    }
+</div>
+
+
+
