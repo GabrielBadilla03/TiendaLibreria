@@ -3,64 +3,94 @@
 @{
     ViewBag.Title = "Details";
 }
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-<h2>Details</h2>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<div>
-    <h4>Ventas</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.HistorialVenta.HistorialVentasId)
-        </dt>
+        .container {
+            flex: 1;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.HistorialVenta.HistorialVentasId)
-        </dd>
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <h2>Details</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Producto.NombreProducto)
-        </dt>
+        <div>
+            <h4>Ventas</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.HistorialVenta.HistorialVentasId)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Producto.NombreProducto)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.HistorialVenta.HistorialVentasId)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IdPedido)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Producto.NombreProducto)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IdPedido)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Producto.NombreProducto)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cantidad)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.IdPedido)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cantidad)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.IdPedido)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PrecioUnitario)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cantidad)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PrecioUnitario)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Cantidad)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Subtotal)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.PrecioUnitario)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subtotal)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.PrecioUnitario)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IdDetalle }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Subtotal)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Subtotal)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.IdDetalle }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</body>

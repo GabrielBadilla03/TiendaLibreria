@@ -3,64 +3,94 @@
 @{
     ViewBag.Title = "Details";
 }
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-<h2>Details</h2>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<div>
-    <h4>Clientes</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreCompleto)
-        </dt>
+        .container {
+            flex: 1;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.NombreCompleto)
-        </dd>
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <h2>Details</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CorreoElectronico)
-        </dt>
+        <div>
+            <h4>Clientes</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.NombreCompleto)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CorreoElectronico)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NombreCompleto)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Telefono)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CorreoElectronico)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Telefono)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.CorreoElectronico)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Direccion)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Telefono)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Direccion)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Telefono)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Contrasena)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Contrasena)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Direccion)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Contrasena)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.FechaRegistro)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Contrasena)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ClienteId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dt>
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FechaRegistro)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ClienteId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        </div>
+</body>

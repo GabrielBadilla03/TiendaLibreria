@@ -3,43 +3,74 @@
 @{
     ViewBag.Title = "Index";
 }
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-<h2>Index</h2>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FechaRegistro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CantidadProductosVendidos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GananciaTotal)
-        </th>
-        <th></th>
-    </tr>
+        .container {
+            flex: 1;
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaRegistro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CantidadProductosVendidos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GananciaTotal)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.HistorialVentasId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.HistorialVentasId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.HistorialVentasId })
-        </td>
-    </tr>
-}
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <h2>Index</h2>
 
-</table>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaRegistro)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CantidadProductosVendidos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.GananciaTotal)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaRegistro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CantidadProductosVendidos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GananciaTotal)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.HistorialVentasId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.HistorialVentasId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.HistorialVentasId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+    </body>

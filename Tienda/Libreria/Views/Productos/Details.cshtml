@@ -3,85 +3,116 @@
 @{
     ViewBag.Title = "Details";
 }
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-<h2>Details</h2>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<div>
-    <h4>Producto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria.NombreCategoria)
-        </dt>
+        .container {
+            flex: 1;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Categoria.NombreCategoria)
-        </dd>
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+        <h2>Details</h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreProducto)
-        </dt>
+        <div>
+            <h4>Producto</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Categoria.NombreCategoria)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NombreProducto)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Categoria.NombreCategoria)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.NombreProducto)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.NombreProducto)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descuento)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descuento)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Descripcion)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Precio)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Descuento)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Precio)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Descuento)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DisponibilidadInventario)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Precio)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DisponibilidadInventario)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Precio)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DisponibilidadInventario)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.DisponibilidadInventario)
+                </dd>
 
-        <dd>
-            @if (Model.ImagenProducto != null && Model.ImagenProducto.Length > 0)
-            {
-                string imageBase64 = Convert.ToBase64String(Model.ImagenProducto);
-                string imageSrc = string.Format("data:image/jpg;base64,{0}", imageBase64);
-                <img src="@imageSrc" alt="Imagen del Libro" width="300" />
-            }
-            else
-            {
-                <p>No hay imagen disponible</p>
-            }
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Estado)
+                </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CodigoProducto }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                <dd>
+                    @Html.DisplayFor(model => model.Estado)
+                </dd>
+
+                <dd>
+                    @if (Model.ImagenProducto != null && Model.ImagenProducto.Length > 0)
+                    {
+                        string imageBase64 = Convert.ToBase64String(Model.ImagenProducto);
+                        string imageSrc = string.Format("data:image/jpg;base64,{0}", imageBase64);
+                        <img src="@imageSrc" alt="Imagen del Libro" width="300" />
+                    }
+                    else
+                    {
+                        <p>No hay imagen disponible</p>
+                    }
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CodigoProducto }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+        
+    </div>
+</body>
