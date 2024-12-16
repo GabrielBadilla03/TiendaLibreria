@@ -19,9 +19,11 @@ namespace Libreria.Controllers
         public ActionResult Index()
         {
             var productos = db.Productos.Include(p => p.Categoria);
+
             return View(productos.ToList());
         }
 
+        // GET: Productos/Details/5
         // GET: Productos/Details/5
         public ActionResult Details(int? id)
         {
@@ -29,13 +31,19 @@ namespace Libreria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productos.Find(id);
+
+            // Carga ansiosa de la categoría asociada al producto
+            Producto producto = db.Productos
+                                 .Include(p => p.Categoria) // Incluir la relación
+                                 .FirstOrDefault(p => p.CodigoProducto == id);
+
             if (producto == null)
             {
                 return HttpNotFound();
             }
             return View(producto);
         }
+
 
         // GET: Productos/Create
         public ActionResult Create()
@@ -116,7 +124,11 @@ namespace Libreria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productos.Find(id);
+
+            Producto producto = db.Productos
+                                 .Include(p => p.Categoria) // Incluir la relación
+                                 .FirstOrDefault(p => p.CodigoProducto == id);
+
             if (producto == null)
             {
                 return HttpNotFound();
