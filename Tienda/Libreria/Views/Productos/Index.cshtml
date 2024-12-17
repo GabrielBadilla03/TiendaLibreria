@@ -34,57 +34,99 @@
 </head>
 <body>
     <div class="container my-4">
-        <div class="container">
-            <h2 class="text-center mt-4 mb-4">Listado de Productos</h2>
+        <h2 class="text-center mt-4 mb-4">Listado de Productos</h2>
+        <div class="text-right mb-3">
+            <a href="@Url.Action("Create")" class="btn btn-primary">Agregar Nuevo Producto</a>
+        </div>
 
-            <link rel="stylesheet" href="~/Views/Css/estilos.css" />
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        @if (item.ImagenProducto != null && item.ImagenProducto.Length > 0)
+                        {
+                            string imageBase64 = Convert.ToBase64String(item.ImagenProducto);
+                            string imageSrc = string.Format("data:image/jpg;base64,{0}", imageBase64);
+                            <img src="@imageSrc" class="card-img-top" alt="Imagen de @item.NombreProducto" style="object-fit: cover;" />
+                        }
+                        else
+                        {
+                            <img src="~/Images/default-placeholder.png" class="card-img-top" alt="Imagen no disponible" style="height: 200px; object-fit: cover;" />
+                        }
 
-            <div class="text-right mb-3">
-                <a href="@Url.Action("Create")" class="btn btn-primary">Agregar Nuevo Producto</a>
-            </div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">@item.NombreProducto</h5>
+                            <p class="card-text text-muted">@item.Descripcion</p>
+                            <p class="card-text"><strong>Precio:</strong> $@item.Precio</p>
+                            <p class="card-text"><strong>Descuento:</strong> @item.Descuento%</p>
+                            <p class="card-text">
+                                <strong>Inventario:</strong> @item.DisponibilidadInventario
+                            </p>
+                        </div>
 
-            <div class="row">
-                @foreach (var item in Model)
-                {
-                    <div class="col-md-4 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <!-- Mostrar la imagen del producto -->
-                            @if (item.ImagenProducto != null && item.ImagenProducto.Length > 0)
-                            {
-                                string imageBase64 = Convert.ToBase64String(item.ImagenProducto);
-                                string imageSrc = string.Format("data:image/jpg;base64,{0}", imageBase64);
-                                <img src="@imageSrc" class="card-img-top" alt="Imagen de @item.NombreProducto" style="object-fit: cover;" />
-                            }
-                            else
-                            {
-                                <img src="~/Images/default-placeholder.png" class="card-img-top" alt="Imagen no disponible" style="height: 200px; object-fit: cover;" />
-                            }
-
-                            <div class="card-body">
-                                <h5 class="card-title text-truncate">@item.NombreProducto</h5>
-                                <p class="card-text text-muted">@item.Descripcion</p>
-                                <p class="card-text"><strong>Precio:</strong> $@item.Precio</p>
-                                <p class="card-text"><strong>Descuento:</strong> @item.Descuento%</p>
-                                <p class="card-text">
-                                    <strong>Inventario:</strong> @item.DisponibilidadInventario
-                                </p>
-                            </div>
-
-                            <div class="card-footer text-center">
-                                <a href="@Url.Action("Edit", new { id = item.CodigoProducto })" class="btn btn-sm btn-warning mx-1">Editar</a>
-                                <a href="@Url.Action("Details", new { id = item.CodigoProducto })" class="btn btn-sm btn-info mx-1">Detalles</a>
-                                <a href="@Url.Action("Delete", new { id = item.CodigoProducto })" class="btn btn-sm btn-danger mx-1">Eliminar</a>
-                                <a href="@Url.Action("AddToCart", new { id = item.CodigoProducto })" class="btn btn-sm btn-success mx-1">
-                                    <i class="fas fa-shopping-cart"></i>
-                                </a>
-                            </div>
-
+                        <div class="card-footer text-center">
+                            <a href="@Url.Action("Edit", new { id = item.CodigoProducto })" class="btn btn-sm btn-warning mx-1">Editar</a>
+                            <a href="@Url.Action("Details", new { id = item.CodigoProducto })" class="btn btn-sm btn-info mx-1">Detalles</a>
+                            <a href="@Url.Action("Delete", new { id = item.CodigoProducto })" class="btn btn-sm btn-danger mx-1">Eliminar</a>
+                            <!-- Botón para añadir al carrito -->
+                            <button class="btn btn-sm btn-success mx-1" onclick="agregarAlCarrito(@item.CodigoProducto, '@item.NombreProducto', @item.Precio, @item.Descuento, @item.DisponibilidadInventario)">
+                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                            </button>
                         </div>
                     </div>
-                }
-
-            </div>
+                </div>
+            }
         </div>
     </div>
-</body>
 
+    <!-- Script para manejar el carrito -->
+    <script>
+        // Función para actualizar el contador del carrito en el navbar
+        function actualizarContadorCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+            document.getElementById('carrito-contador').textContent = totalProductos;
+        }
+
+        // Función para agregar productos al carrito
+        function agregarAlCarrito(id, nombre, precio, descuento, inventario) {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            // Buscar si el producto ya existe en el carrito
+            const productoExistente = carrito.find(item => item.CodigoProducto === id);
+
+            if (productoExistente) {
+                if (productoExistente.cantidad < inventario) {
+                    productoExistente.cantidad++;
+                } else {
+                    alert('No hay suficiente inventario disponible');
+                    return;
+                }
+            } else {
+                // Añadir nuevo producto al carrito
+                carrito.push({
+                    CodigoProducto: id,
+                    NombreProducto: nombre,
+                    Precio: precio,
+                    Descuento: descuento,
+                    cantidad: 1
+                });
+            }
+
+            // Guardar carrito en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            // Actualizar el contador en el navbar
+            actualizarContadorCarrito();
+
+            // Mensaje de confirmación
+            alert(`Producto "${nombre}" añadido al carrito`);
+        }
+
+        // Actualizar contador al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            actualizarContadorCarrito();
+        });
+    </script>
+</body>

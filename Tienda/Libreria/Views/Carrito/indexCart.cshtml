@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Carrito de Compras";
+}
+
+<main class="container py-5">
+    <h1 class="text-center mb-4">Carrito de Compras</h1>
+
+    <!-- Contenedor del carrito -->
+    <div id="carrito-container" class="row justify-content-center">
+        <!-- Los productos del carrito se renderizan aquí dinámicamente -->
+    </div>
+
+    <!-- Botones de acciones -->
+    <div class="text-center mt-4">
+        <a href="/Productos" class="btn btn-secondary btn-lg">Volver al Catálogo</a>
+        <button class="btn btn-success btn-lg" onclick="finalizarCompra()">Finalizar Compra</button>
+    </div>
+</main>
+
+<!-- Script del carrito -->
+<script>
+    // Función para mostrar el carrito en la vista
+    function mostrarVistaCarrito() {
+        const carritoContainer = document.getElementById('carrito-container');
+        carritoContainer.innerHTML = ''; // Limpiar el contenedor
+
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        if (carrito.length === 0) {
+            carritoContainer.innerHTML = `
+                <p class="text-center">El carrito está vacío. ¡Agrega productos para continuar!</p>
+            `;
+            return;
+        }
+
+        // Generar la tabla del carrito
+        let totalCompra = 0;
+        let contenidoHTML = `
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Precio Total</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+        `;
+
+        carrito.forEach((item, index) => {
+            const precioTotal = (item.Precio - item.Descuento) * item.cantidad;
+            totalCompra += precioTotal;
+
+            contenidoHTML += `
+                <tr>
+                    <td>${item.NombreProducto}</td>
+                    <td>${item.cantidad}</td>
+                    <td>$${(item.Precio - item.Descuento).toFixed(2)}</td>
+                    <td>$${precioTotal.toFixed(2)}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+                    </td>
+                </tr>
+            `;
+        });
+
+        contenidoHTML += `
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end fw-bold">Total de la Compra</td>
+                        <td colspan="2" class="fw-bold">$${totalCompra.toFixed(2)}</td>
+                    </tr>
+                </tfoot>
+            </table>
+        `;
+
+        carritoContainer.innerHTML = contenidoHTML;
+    }
+
+    // Función para eliminar un producto del carrito
+    function eliminarDelCarrito(index) {
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        carrito.splice(index, 1); // Eliminar el producto por índice
+        localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar localStorage
+        mostrarVistaCarrito(); // Volver a renderizar la vista
+    }
+
+    // Función para finalizar la compra
+    function finalizarCompra() {
+        alert('¡Gracias por tu compra! Tu carrito ha sido vaciado.');
+        localStorage.removeItem('carrito'); // Vaciar el carrito
+        window.location.reload(); // Recargar la página
+    }
+
+    // Mostrar el carrito al cargar la página
+    document.addEventListener('DOMContentLoaded', () => {
+        mostrarVistaCarrito();
+    });
+</script>
