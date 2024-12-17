@@ -12,12 +12,13 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #171a1d;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav" style="font-family:Arial, Helvetica, sans-serif">
+                <img src="~/img/open-book.png" width="25" style="margin-bottom: 9px; margin-right:5px;"/>
                 @Html.ActionLink("UFIBRERÍA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-uppercase fw-bold" })
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">@Html.ActionLink("Catálogo", "Index", "Productos", new { area = "" }, new { @class = "nav-link" })</li>
@@ -29,15 +30,15 @@
 
                 @Html.Partial("_LoginPartial")
 
-            <div class="d-flex align-items-center">
-                <a href="@Url.Action("IndexCart", "Carrito")" class="nav-link position-relative">
-                    <i class="bi bi-cart3" style="font-size: 1.5rem; color: white;"></i>
-                    <span id="carrito-contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        0
-                    </span>
-                </a>
+                <div class="d-flex align-items-center">
+                    <a href="@Url.Action("IndexCart", "Carrito")" class="nav-link position-relative">
+                        <i class="bi bi-cart3" style="font-size: 1.5rem; color: white;"></i>
+                        <span id="carrito-contador" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </a>
 
-            </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -48,29 +49,37 @@
     <footer class="bg-dark text-white pt-4 pb-2 mt-5">
         <div class="container">
             <div class="row">
-                <!-- Logo y Descripción -->
-                <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
+                <!-- Redes Sociales. -->
+                <div class="col-md-4 text-md-start text-center mb-3 mb-md-0" style="font-family: Arial, Helvetica, sans-serif">
                     <h5 class="mb-2">UFIBRERÍA</h5>
                     <p class="mb-0">Tu mejor opción en libros, conocimiento y más.</p>
-                </div>
-
-                <!-- Redes Sociales -->
-                <div class="col-md-4 text-md-center text-center mb-3 mb-md-0">
-                    <h5 class="mb-2">Síguenos en nuestras Redes</h5>
+                    <br />
+                    <h5 class="mb-2">Visita nuestras redes sociales.</h5>
                     <div>
-                        <a href="https://www.instagram.com/ufibreria" target="_blank" class="mx-2">
+                        <a href="https://www.instagram.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
                             <i class="bi bi-instagram" style="font-size: 1.5rem; color: white;"></i>
                         </a>
-                        <a href="https://www.facebook.com/ufibreria" target="_blank" class="mx-2">
+                        <a href="https://www.facebook.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
                             <i class="bi bi-facebook" style="font-size: 1.5rem; color: white;"></i>
+                        </a>
+                        <a href="https://www.x.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
+                            <i class="bi bi-twitter" style="font-size: 1.5rem; color: white;"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
+                            <i class="bi bi-tiktok" style="font-size: 1.5rem; color: white;"></i>
                         </a>
                     </div>
                 </div>
 
+                <!-- Logo. -->
+                <div class="col-md-4 text-md-center text-center mb-3 mb-md-0">
+                    <img src="~/img/open-book.png" width="100" style="margin-top: 15px" />
+                </div>
+
                 <!-- Enlaces Rápidos -->
-                <div class="col-md-4 text-md-end text-center">
+                <div class="col-md-4 text-md-end text-center" style="font-family: Arial, Helvetica, sans-serif">
                     <h5 class="mb-2">Enlaces Rápidos</h5>
-                    <ul class="list-unstyled">
+                    <ul class="list-unstyled" style="text-decoration: underline">
                         <li><a href="/" class="text-white text-decoration-none">Inicio</a></li>
                         <li><a href="/Productos" class="text-white text-decoration-none">Catálogo</a></li>
                         <li><a href="/Account/Login" class="text-white text-decoration-none">Iniciar Sesión</a></li>
@@ -80,7 +89,7 @@
             <hr class="my-3 text-white">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2024 - UFIBRERÍA. Todos los derechos reservados.</p>
+                    <p class="mb-0">&copy; 2024 - UFIBRERÍA. Josué F. Loria Victor - Gabriel J. Badilla Arrieta - Juan Pablo Vindas Suárez - Sebastián Segura Sáenz.</p>
                 </div>
             </div>
         </div>

@@ -24,7 +24,6 @@ namespace Libreria.Controllers
         }
 
         // GET: Productos/Details/5
-        // GET: Productos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -32,18 +31,19 @@ namespace Libreria.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            // Carga ansiosa de la categoría asociada al producto
+            // Carga ansiosa de la categoría, reseñas y clientes asociados
             Producto producto = db.Productos
-                                 .Include(p => p.Categoria) // Incluir la relación
+                                 .Include(p => p.Categoria)
+                                 .Include(p => p.Reseñas.Select(r => r.Clientes)) // Incluye Clientes en las reseñas
                                  .FirstOrDefault(p => p.CodigoProducto == id);
 
             if (producto == null)
             {
                 return HttpNotFound();
             }
+
             return View(producto);
         }
-
 
         // GET: Productos/Create
         public ActionResult Create()

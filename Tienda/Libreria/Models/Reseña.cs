@@ -24,7 +24,7 @@ namespace Libreria.Models
         public string Comentario { get; set; }
 
         [Required]
-        [Range(1, 10)] 
+        [Range(1, 5)] 
         public int Calificacion { get; set; }
 
         [Required]
