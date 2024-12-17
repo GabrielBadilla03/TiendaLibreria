@@ -64,6 +64,10 @@ namespace Libreria.Models
 
     public class RegisterViewModel
     {
+        [Required(ErrorMessage = "El nombre de usuario es obligatorio.")]
+        [Display(Name = "Nombre de Usuario")]
+        public string UserName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Correo electrónico")]
