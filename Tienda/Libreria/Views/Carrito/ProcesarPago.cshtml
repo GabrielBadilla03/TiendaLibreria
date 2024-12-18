@@ -92,9 +92,16 @@
         </div>
 
         <div class="text-center">
+            <!-- Botón para Confirmar la Compra -->
             <button type="submit" class="btn btn-success">Confirmar Compra</button>
+
+            <!-- Botón para Generar la Factura -->
+            <a href="@Url.Action("GenerarFactura", "Carrito")" class="btn btn-primary">Generar Factura</a>
+
+            <!-- Botón para Regresar -->
             <a href="@Url.Action("IndexCart", "Carrito")" class="btn btn-secondary">Regresar</a>
         </div>
+
     }
 
 
