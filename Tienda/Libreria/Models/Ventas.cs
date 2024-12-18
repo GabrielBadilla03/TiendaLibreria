@@ -11,32 +11,28 @@ namespace Libreria.Models
     {
         [Key]
         [Required]
-        public int IdDetalle { get; set; }
+        public int IdDetalle { get; set; } // Identificador único del detalle de la venta
 
         [Required]
-        public int IdPedido { get; set; }
-
-        [Required]
-        public int CodigoProducto { get; set; }
-
-        [Required]
-        public int Cantidad { get; set; }
-
-        [Required]
-        public decimal PrecioUnitario { get; set; }
-
-        [Required]
-        public decimal Subtotal { get; set; }
-
+        public int CodigoProducto { get; set; } // Código del producto
 
         [ForeignKey("CodigoProducto")]
-        public Producto Producto { get; set; }
+        public Producto Producto { get; set; } // Relación con la tabla Producto
 
         [Required]
-        public int HistorialVentasId { get; set; } 
+        public int Cantidad { get; set; } // Cantidad de productos vendidos
+
+        [Required]
+        public decimal PrecioUnitario { get; set; } // Precio unitario del producto
+
+        [NotMapped]
+        public decimal PrecioTotal => Cantidad * PrecioUnitario; // Calculado en tiempo de ejecución
+
+
+        [Required]
+        public int HistorialVentasId { get; set; } // Relación con HistorialVenta
 
         [ForeignKey("HistorialVentasId")]
-        public HistorialVenta HistorialVenta { get; set; }
-
+        public HistorialVenta HistorialVenta { get; set; } // Relación con la tabla HistorialVenta
     }
 }

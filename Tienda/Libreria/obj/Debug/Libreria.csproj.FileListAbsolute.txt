@@ -306,3 +306,5 @@ C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.dll
 C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.pdb
 C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ImgByte.resources
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ImgByte.resources
+C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ShoppingCart.resources
+C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.CarritoDeComprasFix.resources

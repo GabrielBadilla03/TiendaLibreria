@@ -18,7 +18,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav" style="font-family:Arial, Helvetica, sans-serif">
-                <img src="~/img/open-book.png" width="25" style="margin-bottom: 9px; margin-right:5px;"/>
+                <img src="~/img/open-book.png" width="25" style="margin-bottom: 9px; margin-right:5px;" />
                 @Html.ActionLink("UFIBRERÍA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-uppercase fw-bold" })
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">@Html.ActionLink("Catálogo", "Index", "Productos", new { area = "" }, new { @class = "nav-link" })</li>
@@ -38,74 +38,154 @@
                             0
                         </span>
                     </a>
-
                 </div>
             </div>
         </div>
     </nav>
 
-    @RenderBody()
+    <!-- Contenedor para mostrar alertas -->
+    <div class="alert-container"></div>
+
+    <!-- Renderizado del cuerpo principal -->
+    <div class="container my-4">
+        @RenderBody()
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white pt-4 pb-2 mt-5">
         <div class="container">
             <div class="row">
-                <!-- Redes Sociales. -->
-                <div class="col-md-4 text-md-start text-center mb-3 mb-md-0" style="font-family: Arial, Helvetica, sans-serif">
+                <div class="col-md-4 text-md-start text-center mb-3 mb-md-0">
                     <h5 class="mb-2">UFIBRERÍA</h5>
                     <p class="mb-0">Tu mejor opción en libros, conocimiento y más.</p>
-                    <br />
-                    <h5 class="mb-2">Visita nuestras redes sociales.</h5>
+                    <h5 class="mb-2 mt-3">Visita nuestras redes sociales</h5>
                     <div>
-                        <a href="https://www.instagram.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
+                        <a href="https://www.instagram.com/ufibreria" target="_blank" class="mx-2">
                             <i class="bi bi-instagram" style="font-size: 1.5rem; color: white;"></i>
                         </a>
-                        <a href="https://www.facebook.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
+                        <a href="https://www.facebook.com/ufibreria" target="_blank" class="mx-2">
                             <i class="bi bi-facebook" style="font-size: 1.5rem; color: white;"></i>
                         </a>
-                        <a href="https://www.x.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
+                        <a href="https://www.x.com/ufibreria" target="_blank" class="mx-2">
                             <i class="bi bi-twitter" style="font-size: 1.5rem; color: white;"></i>
                         </a>
-                        <a href="https://www.tiktok.com/ufibreria" target="_blank" class="mx-2" style="text-decoration: none">
+                        <a href="https://www.tiktok.com/ufibreria" target="_blank" class="mx-2">
                             <i class="bi bi-tiktok" style="font-size: 1.5rem; color: white;"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Logo. -->
-                <div class="col-md-4 text-md-center text-center mb-3 mb-md-0">
-                    <img src="~/img/open-book.png" width="100" style="margin-top: 15px" />
+                <div class="col-md-4 text-md-center text-center">
+                    <img src="~/img/open-book.png" width="100" />
                 </div>
 
-                <!-- Enlaces Rápidos -->
-                <div class="col-md-4 text-md-end text-center" style="font-family: Arial, Helvetica, sans-serif">
+                <div class="col-md-4 text-md-end text-center">
                     <h5 class="mb-2">Enlaces Rápidos</h5>
-                    <ul class="list-unstyled" style="text-decoration: underline">
-                        <li><a href="/" class="text-white text-decoration-none">Inicio</a></li>
-                        <li><a href="/Productos" class="text-white text-decoration-none">Catálogo</a></li>
-                        <li><a href="/Account/Login" class="text-white text-decoration-none">Iniciar Sesión</a></li>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white">Inicio</a></li>
+                        <li><a href="/Productos" class="text-white">Catálogo</a></li>
+                        <li><a href="/Account/Login" class="text-white">Iniciar Sesión</a></li>
                     </ul>
                 </div>
             </div>
             <hr class="my-3 text-white">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p class="mb-0">&copy; 2024 - UFIBRERÍA. Josué F. Loria Victor - Gabriel J. Badilla Arrieta - Juan Pablo Vindas Suárez - Sebastián Segura Sáenz.</p>
+                    <p>&copy; 2024 - UFIBRERÍA. Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
-
     <!-- Scripts -->
-    @Scripts.Render("~/bundles/jquery")
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
-    <!-- Script para contador dinámico del carrito -->
+
+    @RenderSection("Scripts", required: false)
+
+
+
+    <!-- Script personalizado -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            document.getElementById('carrito-contador').textContent = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    $(document).ready(function () {
+        // Función para actualizar el contador del carrito
+        function actualizarContadorCarrito() {
+            $.ajax({
+                url: '@Url.Action("ContarProductos", "Carrito")',
+                type: 'GET',
+                dataType: 'json',
+                success: function (response) {
+                    if (response && response.total !== undefined) {
+                        $('#carrito-contador').text(response.total); // Actualiza el contador
+                    }
+                },
+                error: function () {
+                    console.error('Error al actualizar el contador del carrito.');
+                }
+            });
+        }
+
+        // Llama a la función al cargar la página
+        actualizarContadorCarrito();
+
+        // Función para mostrar mensajes al usuario
+        function mostrarMensaje(tipo, mensaje) {
+            // Elimina alertas existentes
+            $('.alert-container').empty();
+
+            // Crear un elemento div con el mensaje
+            const mensajeDiv = $(`
+                <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+                    ${mensaje}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            `);
+
+            // Agregar el mensaje al contenedor principal (alert-container)
+            $('.alert-container').append(mensajeDiv);
+
+            // Cerrar el mensaje después de 5 segundos
+            setTimeout(() => {
+                mensajeDiv.alert('close');
+            }, 5000);
+        }
+
+        // Captura el evento de envío del formulario
+        $('form.agregar-carrito-form').on('submit', function (event) {
+            event.preventDefault(); // Evita el envío normal del formulario
+            const form = $(this);
+
+            // Desactiva temporalmente el botón para evitar envíos dobles
+            const submitButton = form.find('button[type="submit"]');
+            submitButton.prop('disabled', true);
+
+            $.ajax({
+                url: form.attr('action'),
+                type: form.attr('method'),
+                data: form.serialize(),
+                success: function (response) {
+                    if (response.success) {
+                        actualizarContadorCarrito(); // Actualiza el contador del carrito
+                        mostrarMensaje('success', response.message); // Mensaje de éxito
+                    } else {
+                        mostrarMensaje('danger', response.message); // Mensaje de error
+                    }
+                },
+                error: function () {
+                    mostrarMensaje('danger', 'Ocurrió un error inesperado al agregar el producto al carrito.');
+                },
+                complete: function () {
+                    // Reactiva el botón después de procesar la solicitud
+                    submitButton.prop('disabled', false);
+                }
+            });
         });
+    });
     </script>
+
+
+
+
 </body>
 </html>
+

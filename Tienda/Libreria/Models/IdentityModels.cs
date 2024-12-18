@@ -25,7 +25,7 @@ namespace Libreria.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
+        public DbSet<Carrito> Carritos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Clientes> Clientes { get; set; }
@@ -53,14 +53,15 @@ namespace Libreria.Models
                 .HasForeignKey(r => r.CodigoCliente);
 
             modelBuilder.Entity<Ventas>()
-                .HasRequired(v => v.Producto)
-                .WithMany()
-                .HasForeignKey(v => v.CodigoProducto);
+    .HasRequired(v => v.Producto)
+    .WithMany()
+    .HasForeignKey(v => v.CodigoProducto);
 
             modelBuilder.Entity<Ventas>()
                 .HasRequired(v => v.HistorialVenta)
                 .WithMany(h => h.Ventas)
                 .HasForeignKey(v => v.HistorialVentasId);
+
 
             base.OnModelCreating(modelBuilder);
         }

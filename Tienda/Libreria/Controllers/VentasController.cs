@@ -17,100 +17,99 @@ namespace Libreria.Controllers
         // GET: Ventas
         public ActionResult Index()
         {
-            var ventas = db.Ventas.Include(v => v.HistorialVenta).Include(v => v.Producto);
-            return View(ventas.ToList());
+            var ventas = db.Ventas.Include(v => v.Producto).Include(v => v.HistorialVenta).ToList();
+            return View(ventas);
         }
 
         // GET: Ventas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ventas ventas = db.Ventas.Find(id);
-            if (ventas == null)
-            {
+
+            var venta = db.Ventas
+                          .Include(v => v.Producto)
+                          .Include(v => v.HistorialVenta)
+                          .FirstOrDefault(v => v.IdDetalle == id);
+
+            if (venta == null)
                 return HttpNotFound();
-            }
-            return View(ventas);
+
+            return View(venta);
         }
 
         // GET: Ventas/Create
         public ActionResult Create()
         {
-            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "HistorialVentasId");
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto");
+            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "FechaRegistro");
             return View();
         }
 
         // POST: Ventas/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "IdDetalle,IdPedido,CodigoProducto,Cantidad,PrecioUnitario,Subtotal,HistorialVentasId")] Ventas ventas)
+        public ActionResult Create([Bind(Include = "IdDetalle,CodigoProducto,Cantidad,PrecioUnitario,HistorialVentasId")] Ventas venta)
         {
             if (ModelState.IsValid)
             {
-                db.Ventas.Add(ventas);
+                db.Ventas.Add(venta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "HistorialVentasId", ventas.HistorialVentasId);
-            ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", ventas.CodigoProducto);
-            return View(ventas);
+            ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", venta.CodigoProducto);
+            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "FechaRegistro", venta.HistorialVentasId);
+            return View(venta);
         }
 
         // GET: Ventas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ventas ventas = db.Ventas.Find(id);
-            if (ventas == null)
-            {
+
+            var venta = db.Ventas.Find(id);
+            if (venta == null)
                 return HttpNotFound();
-            }
-            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "HistorialVentasId", ventas.HistorialVentasId);
-            ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", ventas.CodigoProducto);
-            return View(ventas);
+
+            ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", venta.CodigoProducto);
+            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "FechaRegistro", venta.HistorialVentasId);
+            return View(venta);
         }
 
         // POST: Ventas/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que quiere enlazarse. Para obtener 
-        // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "IdDetalle,IdPedido,CodigoProducto,Cantidad,PrecioUnitario,Subtotal,HistorialVentasId")] Ventas ventas)
+        public ActionResult Edit([Bind(Include = "IdDetalle,CodigoProducto,Cantidad,PrecioUnitario,HistorialVentasId")] Ventas venta)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ventas).State = EntityState.Modified;
+                db.Entry(venta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "HistorialVentasId", ventas.HistorialVentasId);
-            ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", ventas.CodigoProducto);
-            return View(ventas);
+
+            ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", venta.CodigoProducto);
+            ViewBag.HistorialVentasId = new SelectList(db.HistorialVentas, "HistorialVentasId", "FechaRegistro", venta.HistorialVentasId);
+            return View(venta);
         }
 
         // GET: Ventas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
-            {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ventas ventas = db.Ventas.Find(id);
-            if (ventas == null)
-            {
+
+            var venta = db.Ventas
+                          .Include(v => v.Producto)
+                          .Include(v => v.HistorialVenta)
+                          .FirstOrDefault(v => v.IdDetalle == id);
+
+            if (venta == null)
                 return HttpNotFound();
-            }
-            return View(ventas);
+
+            return View(venta);
         }
 
         // POST: Ventas/Delete/5
@@ -118,8 +117,8 @@ namespace Libreria.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ventas ventas = db.Ventas.Find(id);
-            db.Ventas.Remove(ventas);
+            var venta = db.Ventas.Find(id);
+            db.Ventas.Remove(venta);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -127,9 +126,8 @@ namespace Libreria.Controllers
         protected override void Dispose(bool disposing)
         {
             if (disposing)
-            {
                 db.Dispose();
-            }
+
             base.Dispose(disposing);
         }
     }

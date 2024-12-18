@@ -183,8 +183,17 @@
     <Compile Include="Migrations\202411280755017_ImgByte.Designer.cs">
       <DependentUpon>202411280755017_ImgByte.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202412172056238_ShoppingCart.cs" />
+    <Compile Include="Migrations\202412172056238_ShoppingCart.Designer.cs">
+      <DependentUpon>202412172056238_ShoppingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202412172236463_CarritoDeComprasFix.cs" />
+    <Compile Include="Migrations\202412172236463_CarritoDeComprasFix.Designer.cs">
+      <DependentUpon>202412172236463_CarritoDeComprasFix.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Carrito.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\Clientes.cs" />
     <Compile Include="Models\HistorialVenta.cs" />
@@ -339,6 +348,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202411280755017_ImgByte.resx">
       <DependentUpon>202411280755017_ImgByte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412172056238_ShoppingCart.resx">
+      <DependentUpon>202412172056238_ShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202412172236463_CarritoDeComprasFix.resx">
+      <DependentUpon>202412172236463_CarritoDeComprasFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -69,10 +69,17 @@
                             <a href="@Url.Action("Edit", new { id = item.CodigoProducto })" class="btn btn-sm btn-warning mx-1">Editar</a>
                             <a href="@Url.Action("Details", new { id = item.CodigoProducto })" class="btn btn-sm btn-info mx-1">Detalles</a>
                             <a href="@Url.Action("Delete", new { id = item.CodigoProducto })" class="btn btn-sm btn-danger mx-1">Eliminar</a>
-                            <!-- Botón para añadir al carrito -->
-                            <button class="btn btn-sm btn-success mx-1" onclick="agregarAlCarrito(@item.CodigoProducto, '@item.NombreProducto', @item.Precio, @item.Descuento, @item.DisponibilidadInventario)">
-                                <i class="fas fa-shopping-cart"></i> Añadir al Carrito
-                            </button>
+
+                            <!-- Formulario para agregar al carrito -->
+                            @using (Html.BeginForm("AgregarAlCarrito", "Productos", FormMethod.Post, new { @class = "agregar-carrito-form" }))
+                            {
+                                @Html.Hidden("productoId", item.CodigoProducto)
+                                @Html.Hidden("cantidad", 1) 
+                                <button type="submit" class="btn btn-sm btn-success mx-1" style="margin-top:10px">
+                                    <i class="fas fa-shopping-cart"></i> Añadir al Carrito
+                                </button>
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -80,53 +87,4 @@
         </div>
     </div>
 
-    <!-- Script para manejar el carrito -->
-    <script>
-        // Función para actualizar el contador del carrito en el navbar
-        function actualizarContadorCarrito() {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-            const totalProductos = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-            document.getElementById('carrito-contador').textContent = totalProductos;
-        }
-
-        // Función para agregar productos al carrito
-        function agregarAlCarrito(id, nombre, precio, descuento, inventario) {
-            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-            // Buscar si el producto ya existe en el carrito
-            const productoExistente = carrito.find(item => item.CodigoProducto === id);
-
-            if (productoExistente) {
-                if (productoExistente.cantidad < inventario) {
-                    productoExistente.cantidad++;
-                } else {
-                    alert('No hay suficiente inventario disponible');
-                    return;
-                }
-            } else {
-                // Añadir nuevo producto al carrito
-                carrito.push({
-                    CodigoProducto: id,
-                    NombreProducto: nombre,
-                    Precio: precio,
-                    Descuento: descuento,
-                    cantidad: 1
-                });
-            }
-
-            // Guardar carrito en localStorage
-            localStorage.setItem('carrito', JSON.stringify(carrito));
-
-            // Actualizar el contador en el navbar
-            actualizarContadorCarrito();
-
-            // Mensaje de confirmación
-            alert(`Producto "${nombre}" añadido al carrito`);
-        }
-
-        // Actualizar contador al cargar la página
-        document.addEventListener('DOMContentLoaded', () => {
-            actualizarContadorCarrito();
-        });
-    </script>
 </body>
