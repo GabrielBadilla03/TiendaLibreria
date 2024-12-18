@@ -1,0 +1,139 @@
+﻿@model IEnumerable<Libreria.Models.Carrito>
+
+@{
+    ViewBag.Title = "Procesar Pago";
+    decimal total = Model.Sum(item => item.Subtotal);
+}
+
+<h2 class="text-center">Procesar Pago</h2>
+
+<!-- Resumen de la compra -->
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h4 class="mb-3">Resumen de la Compra</h4>
+            <div class="list-group">
+
+                @foreach (var item in Model)
+                {
+                    <div class="list-group-item">
+                        <div class="product-details">
+                            <div class="product-name">
+                                <strong>@item.Producto.NombreProducto</strong>
+                            </div>
+                            <div class="product-quantity">
+                                <strong>Cantidad:</strong> @item.Cantidad
+                            </div>
+                            <div class="product-Descuento">
+                                <strong>Descuento:</strong> @item.Producto.Descuento
+                            </div>
+                            <div class="product-Estado">
+                                <strong>Estado:</strong> @item.Producto.Estado
+                            </div>
+                            <div class="product-subtotal">
+                                <strong>Subtotal:</strong> @item.Subtotal.ToString("C")
+                            </div>
+                        </div>
+                        <hr />
+                    </div>
+                }
+
+                <!-- Total -->
+                <div class="total-price">
+                    <strong>Total: </strong> @total.ToString("C")
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- Formulario de pago -->
+    @using (Html.BeginForm("FinalizarCompra", "Carrito", FormMethod.Post))
+    {
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="Telefono">Número de Teléfono</label>
+                    <input type="text" class="form-control" id="Telefono" name="Telefono" placeholder="Digite su número de teléfono" required pattern="^\+?[1-9]\d{1,14}$" title="Ingrese un número de teléfono válido" />
+                    <small class="form-text text-muted">Ejemplo: +1234567890</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="TarjetaCredito">Número de Tarjeta de Crédito</label>
+                    <input type="text" class="form-control" id="TarjetaCredito" name="TarjetaCredito" placeholder="Digite su número de tarjeta" required pattern="^\d{13,16}$" title="Ingrese un número de tarjeta de crédito válido (13-16 dígitos)" />
+                    <small class="form-text text-muted">Ejemplo: 1234 5678 9012 3456</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="FechaCaducidad">Fecha de Caducidad</label>
+                    <input type="month" class="form-control" id="FechaCaducidad" name="FechaCaducidad" required />
+                    <small class="form-text text-muted">Seleccione la fecha de caducidad de su tarjeta (mes/año).</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="CVV">Código CVV</label>
+                    <input type="text" class="form-control" id="CVV" name="CVV" placeholder="Ingrese el código CVV" required pattern="^\d{3,4}$" title="Ingrese un código CVV válido (3 o 4 dígitos)" />
+                    <small class="form-text text-muted">Ejemplo: 123 (Visa, MasterCard) o 1234 (American Express)</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group form-check mb-3">
+            <input type="hidden" name="AceptarTerminos" value="false" />
+            <input type="checkbox" class="form-check-input" id="AceptarTerminos" name="AceptarTerminos" value="true" required />
+            <label class="form-check-label" for="AceptarTerminos">Acepto los términos y condiciones</label>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Confirmar Compra</button>
+            <a href="@Url.Action("IndexCart", "Carrito")" class="btn btn-secondary">Regresar</a>
+        </div>
+    }
+
+
+    <style>
+        .product-details {
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-quantity, .product-subtotal {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .product-quantity {
+            margin-top: 5px;
+        }
+
+        .total-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .list-group-item {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+        }
+
+            .list-group-item hr {
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+    </style>
+

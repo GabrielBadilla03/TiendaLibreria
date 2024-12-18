@@ -308,3 +308,6 @@ C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ImgByte
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ImgByte.resources
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ShoppingCart.resources
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.CarritoDeComprasFix.resources
+C:\Projectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ImgByte.resources
+C:\Projectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.ShoppingCart.resources
+C:\Projectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.CarritoDeComprasFix.resources

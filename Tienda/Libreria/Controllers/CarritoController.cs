@@ -11,6 +11,23 @@ namespace Libreria.Controllers
     public class CarritoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        // GET: Procesar Pago
+        [HttpGet]
+        public ActionResult ProcesarPago()
+        {
+            var carrito = db.Carritos.Include(c => c.Producto).ToList();
+            ViewBag.Total = carrito.Sum(c => (c.Cantidad ?? 0) * c.Producto.Precio);
+            return View(carrito);
+        }
+
+       
+        // POST: Cancelar Compra
+        [HttpPost]
+        public ActionResult CancelarCompra()
+        {
+            TempData["Info"] = "Compra cancelada.";
+            return RedirectToAction("Index", "Productos");
+        }
 
         // GET: Carrito
         public ActionResult IndexCart()
@@ -97,6 +114,8 @@ namespace Libreria.Controllers
                 db.SaveChanges();
             }
 
+            TempData["Mensaje"] = "Compra realizada con éxito.";
+
             return RedirectToAction("Index", "Productos");
         }
 
@@ -132,4 +151,5 @@ namespace Libreria.Controllers
             return RedirectToAction("IndexCart");
         }
     }
+
 }
