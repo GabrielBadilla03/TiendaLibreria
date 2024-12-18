@@ -1,49 +1,70 @@
 ﻿@model Libreria.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Registrarse";
+    ViewBag.Title = "Registrate";
 }
 
-<main class="container py-5" aria-labelledby="title">
-    <div class="text-center mb-4">
-        <h2 id="title" class="fw-bold text-primary">@ViewBag.Title</h2>
-        <p class="text-muted">Crea una cuenta nueva para acceder a todas las funcionalidades.</p>
-    </div>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<main class="container py-5" aria-labelledby="title" style="margin-top: 45px;">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="card shadow-sm">
                 <div class="card-body">
                     @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { role = "form" }))
                     {
                         @Html.AntiForgeryToken()
-                        <h4 class="text-center mb-4 text-secondary">Registro de cuenta</h4>
-                        @Html.ValidationSummary("", new { @class = "alert alert-danger" })
+
+                        <div class="text-center mb-4">
+                            <h2 id="title" class="fw-bold text-primary">@ViewBag.Title</h2>
+                        </div>
 
                         <div class="mb-3">
-                            @Html.LabelFor(m => m.UserName, "Nombre de Usuario", new { @class = "form-label" })
-                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Ingrese su nombre de usuario" })
+                            <div style="margin-left: 40px">
+                                @Html.LabelFor(m => m.UserName, "Nombre de Usuario", new { @class = "form-label" })
+                            </div>
+                            <div class="input-group mx-auto" style="max-width: 300px;">
+                                <span class="input-group-text" style="background-color: #0d6efd; color: white;"><i class="fa-solid fa-user"></i></span>
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Ingrese su nombre de usuario" })
+                            </div>
                             @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="mb-3">
-                            @Html.LabelFor(m => m.Email, "Correo electrónico", new { @class = "form-label" })
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Ingrese su correo electrónico" })
+                            <div style="margin-left: 40px">
+                                @Html.LabelFor(m => m.Email, "Correo electrónico", new { @class = "form-label" })
+                            </div>
+                            <div class="input-group mx-auto" style="max-width: 300px;">
+                                <span class="input-group-text" style="background-color: #0d6efd; color: white; font-size: 14px"><i class="fa-solid fa-envelope"></i></span>
+                                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Ingrese su correo electrónico" })
+                            </div>
                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="mb-3">
-                            @Html.LabelFor(m => m.Password, "Contraseña", new { @class = "form-label" })
-                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Ingrese su contraseña" })
+                            <div style="margin-left: 40px">
+                                @Html.LabelFor(m => m.Password, "Contraseña", new { @class = "form-label" })
+                            </div>
+                            <div class="input-group mx-auto" style="max-width: 300px;">
+                                <span class="input-group-text" style="background-color: #0d6efd; color: white;"><i class="fa-solid fa-lock"></i></span>
+                                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Ingrese su contraseña" })
+                            </div>
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
 
                         <div class="mb-3">
-                            @Html.LabelFor(m => m.ConfirmPassword, "Confirmar contraseña", new { @class = "form-label" })
-                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirme su contraseña" })
+                            <div style="margin-left: 40px">
+                                @Html.LabelFor(m => m.ConfirmPassword, "Confirmar contraseña", new { @class = "form-label" })
+                            </div>
+                            <div class="input-group mx-auto" style="max-width: 300px;">
+                                <span class="input-group-text" style="background-color: #0d6efd; color: white;"><i class="fa-solid fa-lock"></i></span>
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Confirme su contraseña" })
+                            </div>
                             @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
                         </div>
 
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        <div style="margin-top: 30px; text-align: center">
+                            <button type="submit" class="btn btn-primary btn-m">Registrarse</button>
                         </div>
 
                         <div class="text-center mt-3">
@@ -56,6 +77,8 @@
             </div>
         </div>
     </div>
+
+
 </main>
 
 @section Scripts {
