@@ -7,48 +7,52 @@
       "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\carrito\\procesarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\carrito\\procesarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\carrito\\procesarpago.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\carrito\\indexcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\carrito\\indexcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\carrito\\indexcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|c:\\projectos\\tiendalibreria\\tienda\\libreria\\views\\productos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\productos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\productos\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\productos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|solutionrelative:libreria\\views\\productos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7FADDE23-6955-4EAD-B64C-5A121CDD852C}|Libreria\\Libreria.csproj|C:\\Projectos\\TiendaLibreria\\Tienda\\libreria\\views\\productos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -82,7 +86,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 65,
+          "SelectedChildIndex": 58,
           "Children": [
             {
               "$type": "Bookmark",
@@ -314,7 +318,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Libreria\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Libreria\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAGcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-17T23:00:52.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Libreria\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "Libreria\\Controllers\\CarritoController.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAwGIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T22:12:34.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "About.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Home\\About.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Home\\About.cshtml",
@@ -327,28 +357,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Create.cshtml",
-              "RelativeDocumentMoniker": "Libreria\\Views\\Productos\\Create.cshtml",
-              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Create.cshtml",
-              "RelativeToolTip": "Libreria\\Views\\Productos\\Create.cshtml",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ProcesarPago.cshtml",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
+              "RelativeDocumentMoniker": "Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
+              "RelativeToolTip": "Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAGYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T01:54:43.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Carrito.cs",
-              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Models\\Carrito.cs",
-              "RelativeDocumentMoniker": "Libreria\\Models\\Carrito.cs",
-              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Models\\Carrito.cs",
-              "RelativeToolTip": "Libreria\\Models\\Carrito.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T22:17:37.933Z",
+              "WhenOpened": "2024-12-18T00:36:32.037Z",
               "EditorCaption": ""
             },
             {
@@ -359,14 +376,27 @@
               "RelativeDocumentMoniker": "Libreria\\Views\\Carrito\\indexCart.cshtml",
               "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Carrito\\indexCart.cshtml",
               "RelativeToolTip": "Libreria\\Views\\Carrito\\indexCart.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-17T22:12:47.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "Libreria\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "Libreria\\Controllers\\CategoriasController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T03:13:03.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Home\\Index.cshtml",
@@ -379,20 +409,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Libreria\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Libreria\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-17T23:00:52.162Z",
+              "DocumentIndex": 6,
+              "Title": "Carrito.cs",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Models\\Carrito.cs",
+              "RelativeDocumentMoniker": "Libreria\\Models\\Carrito.cs",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Models\\Carrito.cs",
+              "RelativeToolTip": "Libreria\\Models\\Carrito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T22:17:37.933Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Index.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Productos\\Index.cshtml",
@@ -405,33 +435,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProcesarPago.cshtml",
-              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
-              "RelativeDocumentMoniker": "Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
-              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
-              "RelativeToolTip": "Libreria\\Views\\Carrito\\ProcesarPago.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAGEAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Create.cshtml",
+              "RelativeDocumentMoniker": "Libreria\\Views\\Productos\\Create.cshtml",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Create.cshtml",
+              "RelativeToolTip": "Libreria\\Views\\Productos\\Create.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-18T00:36:32.037Z",
+              "WhenOpened": "2024-12-18T01:54:43.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\CarritoController.cs",
-              "RelativeDocumentMoniker": "Libreria\\Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\CarritoController.cs",
-              "RelativeToolTip": "Libreria\\Controllers\\CarritoController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ProductosController.cs",
+              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\ProductosController.cs",
+              "RelativeDocumentMoniker": "Libreria\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\ProductosController.cs",
+              "RelativeToolTip": "Libreria\\Controllers\\ProductosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T22:12:34.287Z",
+              "WhenOpened": "2024-12-17T22:49:07.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "Contact.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Home\\Contact.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Home\\Contact.cshtml",
@@ -444,7 +474,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Shared\\_LoginPartial.cshtml",
@@ -457,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ManageController.cs",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\ManageController.cs",
               "RelativeDocumentMoniker": "Libreria\\Controllers\\ManageController.cs",
@@ -470,20 +500,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\ProductosController.cs",
-              "RelativeDocumentMoniker": "Libreria\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Controllers\\ProductosController.cs",
-              "RelativeToolTip": "Libreria\\Controllers\\ProductosController.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAADwv+QAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-17T22:49:07.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Edit.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Productos\\Edit.cshtml",
@@ -496,7 +513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Views\\Productos\\Details.cshtml",
               "RelativeDocumentMoniker": "Libreria\\Views\\Productos\\Details.cshtml",
@@ -509,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Producto.cs",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Models\\Producto.cs",
               "RelativeDocumentMoniker": "Libreria\\Models\\Producto.cs",
@@ -522,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Ventas.cs",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Models\\Ventas.cs",
               "RelativeDocumentMoniker": "Libreria\\Models\\Ventas.cs",
@@ -535,7 +552,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "202412172236463_CarritoDeComprasFix.cs",
               "DocumentMoniker": "C:\\Projectos\\TiendaLibreria\\Tienda\\Libreria\\Migrations\\202412172236463_CarritoDeComprasFix.cs",
               "RelativeDocumentMoniker": "Libreria\\Migrations\\202412172236463_CarritoDeComprasFix.cs",
