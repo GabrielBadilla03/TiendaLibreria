@@ -28,7 +28,6 @@ namespace Libreria.Models
         [NotMapped]
         public decimal PrecioTotal => Cantidad * PrecioUnitario; // Calculado en tiempo de ejecución
 
-
         [Required]
         public int HistorialVentasId { get; set; } // Relación con HistorialVenta
 

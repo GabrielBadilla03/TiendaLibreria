@@ -12,7 +12,7 @@ using Libreria.Models;
 
 namespace Libreria.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -179,7 +179,7 @@ namespace Libreria.Controllers
 
                     if (result.Succeeded)
                     {
-                        string defaultRole = "User";
+                        string defaultRole = "Admin";
                         await UserManager.AddToRoleAsync(user.Id, defaultRole);
 
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);

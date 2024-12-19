@@ -10,6 +10,7 @@ using Libreria.Models;
 
 namespace Libreria.Controllers
 {
+    [Authorize(Roles = "Admin,Ventas,User")]
     public class ReseñaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

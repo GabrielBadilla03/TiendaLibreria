@@ -11,6 +11,7 @@ using Libreria.Models;
 
 namespace Libreria.Controllers
 {
+    [Authorize(Roles = "Admin,Ventas,User")]
     public class ProductosController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

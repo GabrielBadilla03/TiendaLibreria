@@ -9,6 +9,7 @@ using System.IO;
 
 namespace Libreria.Controllers
 {
+    [Authorize(Roles = "Admin,Ventas,User")]
     public class CarritoController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

@@ -66,15 +66,19 @@
                         </div>
 
                         <div class="card-footer text-center">
-                            <a href="@Url.Action("Edit", new { id = item.CodigoProducto })" class="btn btn-sm btn-warning mx-1">Editar</a>
                             <a href="@Url.Action("Details", new { id = item.CodigoProducto })" class="btn btn-sm btn-info mx-1">Detalles</a>
-                            <a href="@Url.Action("Delete", new { id = item.CodigoProducto })" class="btn btn-sm btn-danger mx-1">Eliminar</a>
+                            @if (User.IsInRole("Admin") || User.IsInRole("Ventas"))
+                            {
+                                <a href="@Url.Action("Edit", new { id = item.CodigoProducto })" class="btn btn-sm btn-warning mx-1">Editar</a>
+                                <a href="@Url.Action("Delete", new { id = item.CodigoProducto })" class="btn btn-sm btn-danger mx-1">Eliminar</a>
+                            }
+
 
                             <!-- Formulario para agregar al carrito -->
                             @using (Html.BeginForm("AgregarAlCarrito", "Productos", FormMethod.Post, new { @class = "agregar-carrito-form" }))
                             {
                                 @Html.Hidden("productoId", item.CodigoProducto)
-                                @Html.Hidden("cantidad", 1) 
+                                @Html.Hidden("cantidad", 1)
                                 <button type="submit" class="btn btn-sm btn-success mx-1" style="margin-top:10px">
                                     <i class="fas fa-shopping-cart"></i> Añadir al Carrito
                                 </button>

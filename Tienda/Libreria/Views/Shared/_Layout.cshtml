@@ -21,13 +21,23 @@
             <div class="collapse navbar-collapse" id="navbarNav" style="font-family:Arial, Helvetica, sans-serif">
                 <img src="~/img/open-book.png" width="25" style="margin-bottom: 9px; margin-right:5px;" />
                 @Html.ActionLink("UFIBRERÍA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand text-uppercase fw-bold" })
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                @if (User.IsInRole("Admin") || User.IsInRole("Ventas") || User.IsInRole("User"))
+                {
                     <li class="nav-item">@Html.ActionLink("Catálogo", "Index", "Productos", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Categorías", "Index", "Categorias", new { area = "" }, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Reseñas", "Index", "Reseña", new { area = "" }, new { @class = "nav-link" })</li>
+                }
+                @if (User.IsInRole("Admin") || User.IsInRole("Ventas"))
+                {
                     <li class="nav-item">@Html.ActionLink("Historial de Ventas", "Index", "HistorialVentas", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Ventas", "Index", "Ventas", new { area = "" }, new { @class = "nav-link" })</li>
+                }
+                @if (User.IsInRole("Admin"))
+                {
                     <li class="nav-item">@Html.ActionLink("Usuarios", "Index", "Users", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+                }
+            </ul>
 
                 @Html.Partial("_LoginPartial")
 

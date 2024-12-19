@@ -33,6 +33,12 @@ namespace Libreria
                     var role = new IdentityRole("User");
                     roleManager.Create(role);
                 }
+
+                if (!roleManager.RoleExists("Ventas"))
+                {
+                    var role = new IdentityRole("Ventas");
+                    roleManager.Create(role);
+                }
             }
         }
     }

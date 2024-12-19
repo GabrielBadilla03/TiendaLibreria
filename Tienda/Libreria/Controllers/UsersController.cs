@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace Libreria.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
        

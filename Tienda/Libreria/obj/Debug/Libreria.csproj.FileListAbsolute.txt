@@ -485,3 +485,5 @@ C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Carrito
 C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Users.resources
 C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Gabdi.resources
 C:\Projects\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Jozzu.resources
+C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Gabdi.resources
+C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Jozzu.resources
