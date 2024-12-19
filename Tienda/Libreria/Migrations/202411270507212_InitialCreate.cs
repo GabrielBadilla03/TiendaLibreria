@@ -34,38 +34,7 @@
                 .PrimaryKey(t => t.CodigoProducto)
                 .ForeignKey("dbo.Categorias", t => t.CategoriaId)
                 .Index(t => t.CategoriaId);
-            
-            CreateTable(
-                "dbo.Reseña",
-                c => new
-                    {
-                        ReseñaId = c.Int(nullable: false, identity: true),
-                        CodigoProducto = c.Int(nullable: false),
-                        CodigoCliente = c.Int(nullable: false),
-                        Comentario = c.String(nullable: false, maxLength: 1000),
-                        Calificacion = c.Int(nullable: false),
-                        FechaReseña = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.ReseñaId)
-                .ForeignKey("dbo.Clientes", t => t.CodigoCliente)
-                .ForeignKey("dbo.Productoes", t => t.CodigoProducto)
-                .Index(t => t.CodigoProducto)
-                .Index(t => t.CodigoCliente);
-            
-            CreateTable(
-                "dbo.Clientes",
-                c => new
-                    {
-                        ClienteId = c.Int(nullable: false, identity: true),
-                        NombreCompleto = c.String(nullable: false, maxLength: 100),
-                        CorreoElectronico = c.String(nullable: false, maxLength: 100),
-                        Telefono = c.String(nullable: false, maxLength: 20),
-                        Direccion = c.String(nullable: false, maxLength: 200),
-                        Contrasena = c.String(nullable: false),
-                        FechaRegistro = c.DateTime(nullable: false),
-                    })
-                .PrimaryKey(t => t.ClienteId);
-            
+                        
             CreateTable(
                 "dbo.HistorialVentas",
                 c => new
@@ -162,9 +131,27 @@
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId)
                 .Index(t => t.UserId);
-            
+
+            CreateTable(
+                "dbo.Reseña",
+                c => new
+                {
+                    ReseñaId = c.Int(nullable: false, identity: true),
+                    CodigoProducto = c.Int(nullable: false),
+                    CodigoCliente = c.String(nullable: false, maxLength: 128),
+                    Comentario = c.String(nullable: false, maxLength: 1000),
+                    Calificacion = c.Int(nullable: false),
+                    FechaReseña = c.DateTime(nullable: false),
+                })
+                .PrimaryKey(t => t.ReseñaId)
+                .ForeignKey("dbo.AspNetUsers", t => t.CodigoCliente)
+                .ForeignKey("dbo.Productoes", t => t.CodigoProducto)
+                .Index(t => t.CodigoProducto)
+                .Index(t => t.CodigoCliente);
+
+
         }
-        
+
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
@@ -174,7 +161,7 @@
             DropForeignKey("dbo.Ventas", "CodigoProducto", "dbo.Productoes");
             DropForeignKey("dbo.Ventas", "HistorialVentasId", "dbo.HistorialVentas");
             DropForeignKey("dbo.Reseña", "CodigoProducto", "dbo.Productoes");
-            DropForeignKey("dbo.Reseña", "CodigoCliente", "dbo.Clientes");
+            DropForeignKey("dbo.Reseña", "CodigoCliente", "dbo.AspNetUsers");
             DropForeignKey("dbo.Productoes", "CategoriaId", "dbo.Categorias");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
@@ -194,7 +181,6 @@
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Ventas");
             DropTable("dbo.HistorialVentas");
-            DropTable("dbo.Clientes");
             DropTable("dbo.Reseña");
             DropTable("dbo.Productoes");
             DropTable("dbo.Categorias");

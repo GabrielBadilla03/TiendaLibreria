@@ -34,7 +34,7 @@ namespace Libreria.Controllers
             // Carga ansiosa de la categoría, reseñas y clientes asociados
             Producto producto = db.Productos
                                  .Include(p => p.Categoria)
-                                 .Include(p => p.Reseñas.Select(r => r.Clientes)) // Incluye Clientes en las reseñas
+                                 .Include(p => p.Reseñas.Select(r => r.Usuario)) // Incluye Clientes en las reseñas
                                  .FirstOrDefault(p => p.CodigoProducto == id);
 
             if (producto == null)

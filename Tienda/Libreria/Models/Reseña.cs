@@ -11,31 +11,29 @@ namespace Libreria.Models
     {
         [Key]
         [Required]
-        public int ReseñaId { get; set; } 
+        public int ReseñaId { get; set; }
 
         [Required]
-        public int CodigoProducto { get; set; } 
+        public int CodigoProducto { get; set; }
 
         [Required]
-        public int CodigoCliente { get; set; } 
+        public string CodigoCliente { get; set; } // Cambiado a string para coincidir con AspNetUsers.Id
 
         [Required]
-        [MaxLength(1000)] 
+        [MaxLength(1000)]
         public string Comentario { get; set; }
 
         [Required]
-        [Range(1, 5)] 
+        [Range(1, 5)]
         public int Calificacion { get; set; }
 
         [Required]
-        public DateTime FechaReseña { get; set; } = DateTime.Now; 
+        public DateTime FechaReseña { get; set; } = DateTime.Now;
 
-        
         [ForeignKey("CodigoProducto")]
         public Producto Producto { get; set; }
 
-       
         [ForeignKey("CodigoCliente")]
-        public Clientes Clientes { get; set; }
+        public ApplicationUser Usuario { get; set; } // Relación con ApplicationUser
     }
 }

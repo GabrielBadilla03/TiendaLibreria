@@ -423,3 +423,4 @@ C:\Proyectos\TiendaLibreria\Tienda\Libreria\bin\System.Numerics.Vectors.xml
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\bin\System.Threading.Tasks.Extensions.xml
 C:\Proyectos\TiendaLibreria\Tienda\Libreria\bin\System.ValueTuple.xml
+C:\Proyectos\TiendaLibreria\Tienda\Libreria\obj\Debug\Libreria.Migrations.Users.resources

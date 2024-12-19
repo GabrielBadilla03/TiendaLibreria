@@ -17,7 +17,7 @@ namespace Libreria.Controllers
         // GET: Reseña
         public ActionResult Index()
         {
-            var reseñas = db.Reseñas.Include(r => r.Clientes).Include(r => r.Producto);
+            var reseñas = db.Reseñas.Include(r => r.Usuario).Include(r => r.Producto);
             return View(reseñas.ToList());
         }
 
@@ -28,7 +28,10 @@ namespace Libreria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reseña reseña = db.Reseñas.Find(id);
+            Reseña reseña = db.Reseñas
+                      .Include(r => r.Usuario) // Cargar relación con Usuario
+                      .Include(r => r.Producto) // Cargar relación con Producto
+                      .FirstOrDefault(r => r.ReseñaId == id);
             if (reseña == null)
             {
                 return HttpNotFound();
@@ -39,7 +42,7 @@ namespace Libreria.Controllers
         // GET: Reseña/Create
         public ActionResult Create()
         {
-            ViewBag.CodigoCliente = new SelectList(db.Clientes, "ClienteId", "NombreCompleto");
+            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName");
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto");
             return View();
         }
@@ -58,7 +61,7 @@ namespace Libreria.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CodigoCliente = new SelectList(db.Clientes, "ClienteId", "NombreCompleto", reseña.CodigoCliente);
+            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName", reseña.CodigoCliente);
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", reseña.CodigoProducto);
             return View(reseña);
         }
@@ -75,7 +78,7 @@ namespace Libreria.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CodigoCliente = new SelectList(db.Clientes, "ClienteId", "NombreCompleto", reseña.CodigoCliente);
+            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName", reseña.CodigoCliente);
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", reseña.CodigoProducto);
             return View(reseña);
         }
@@ -93,7 +96,7 @@ namespace Libreria.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CodigoCliente = new SelectList(db.Clientes, "ClienteId", "NombreCompleto", reseña.CodigoCliente);
+            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName", reseña.CodigoCliente);
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", reseña.CodigoProducto);
             return View(reseña);
         }
@@ -105,7 +108,10 @@ namespace Libreria.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Reseña reseña = db.Reseñas.Find(id);
+            Reseña reseña = db.Reseñas
+                      .Include(r => r.Usuario) // Cargar relación con Usuario
+                      .Include(r => r.Producto) // Cargar relación con Producto
+                      .FirstOrDefault(r => r.ReseñaId == id);
             if (reseña == null)
             {
                 return HttpNotFound();

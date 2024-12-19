@@ -28,7 +28,6 @@ namespace Libreria.Models
         public DbSet<Carrito> Carritos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Producto> Productos { get; set; }
-        public DbSet<Clientes> Clientes { get; set; }
         public DbSet<Reseña> Reseñas { get; set; }
         public DbSet<Ventas> Ventas { get; set; }
         public DbSet<HistorialVenta> HistorialVentas { get; set; }
@@ -47,10 +46,12 @@ namespace Libreria.Models
                 .WithMany(p => p.Reseñas)
                 .HasForeignKey(r => r.CodigoProducto);
 
+            // Configuración de la relación entre Reseña y ApplicationUser
             modelBuilder.Entity<Reseña>()
-                .HasRequired(r => r.Clientes)
-                .WithMany(c => c.Reseñas)
-                .HasForeignKey(r => r.CodigoCliente);
+                .HasRequired(r => r.Usuario)
+                .WithMany()
+                .HasForeignKey(r => r.CodigoCliente)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Ventas>()
     .HasRequired(v => v.Producto)

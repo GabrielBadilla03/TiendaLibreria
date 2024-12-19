@@ -41,7 +41,7 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Clientes.NombreCompleto)
+                    @Html.DisplayNameFor(model => model.Usuario.UserName)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Producto.NombreProducto)
@@ -62,7 +62,7 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Clientes.NombreCompleto)
+                        @Html.DisplayFor(modelItem => item.Usuario.UserName)
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Producto.NombreProducto)
