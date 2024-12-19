@@ -61,7 +61,6 @@ namespace Libreria.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName", reseña.CodigoCliente);
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", reseña.CodigoProducto);
             return View(reseña);
         }
@@ -78,7 +77,6 @@ namespace Libreria.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName", reseña.CodigoCliente);
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", reseña.CodigoProducto);
             return View(reseña);
         }
@@ -96,7 +94,7 @@ namespace Libreria.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CodigoCliente = new SelectList(db.Users, "Id", "UserName", reseña.CodigoCliente);
+            
             ViewBag.CodigoProducto = new SelectList(db.Productos, "CodigoProducto", "NombreProducto", reseña.CodigoProducto);
             return View(reseña);
         }

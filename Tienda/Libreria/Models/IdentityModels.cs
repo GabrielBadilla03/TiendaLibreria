@@ -46,13 +46,6 @@ namespace Libreria.Models
                 .WithMany(p => p.Reseñas)
                 .HasForeignKey(r => r.CodigoProducto);
 
-            // Configuración de la relación entre Reseña y ApplicationUser
-            modelBuilder.Entity<Reseña>()
-                .HasRequired(r => r.Usuario)
-                .WithMany()
-                .HasForeignKey(r => r.CodigoCliente)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Ventas>()
     .HasRequired(v => v.Producto)
     .WithMany()

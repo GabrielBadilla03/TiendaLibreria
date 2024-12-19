@@ -17,9 +17,6 @@ namespace Libreria.Models
         public int CodigoProducto { get; set; }
 
         [Required]
-        public string CodigoCliente { get; set; } // Cambiado a string para coincidir con AspNetUsers.Id
-
-        [Required]
         [MaxLength(1000)]
         public string Comentario { get; set; }
 
@@ -33,7 +30,6 @@ namespace Libreria.Models
         [ForeignKey("CodigoProducto")]
         public Producto Producto { get; set; }
 
-        [ForeignKey("CodigoCliente")]
         public ApplicationUser Usuario { get; set; } // Relación con ApplicationUser
     }
 }

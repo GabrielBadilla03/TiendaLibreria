@@ -1,201 +1,196 @@
-﻿@{
-    ViewBag.Title = "UFIBRERÍA - Inicio";
-}
-<style>
-    .teOfrecemos {
-        font-size: 45px;
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        margin-top: 60px;
-        font-weight: bold;
-        font-style: italic;
-        color: #0d6efd
+﻿    @{
+        ViewBag.Title = "UFIBRERÍA - Inicio";
     }
+    <style>
+        .teOfrecemos {
+            font-size: 45px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin-top: 60px;
+            font-weight: bold;
+            font-style: italic;
+            color: #0d6efd
+        }
 
-    .fixed-image {
-        height: 70%;
-        object-fit: cover;
-        width: 100%;
-    }
+        .fixed-image {
+            height: 70%;
+            object-fit: cover;
+            width: 100%;
+        }
 
-    .contactanos {
-        font-family: Arial, Helvetica, sans-serif;
-        text-align: center;
-        font-weight: bold;
-        color: white;
-    }
-</style>
+        .contactanos {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
 
 
-<main style="min-height: 70vh;">
+    <main style="min-height: 70vh;">
 
-    <!-- MENSAJE DE BIENVENIDA. -->
-    <section class="row text-center py-5" aria-labelledby="ufibreriaTitle" style="background-color: #f8f9fa;">
-        <div class="col-12">
-            <img src="~/img/open-book.png" width="250" style="margin-bottom: 25px; margin-top: 30px" /> <!-- Logo Sitio. -->
-            <h1 id="title" class="display-4" style="font-family: Arial, Helvetica, sans-serif">UFIBRERÍA</h1> <!-- Título. -->
-            <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px">
-                ¡Bienvenidos a UFIBRERÍA, la librería digital que <br />
-                moderniza la forma en que disfrutas de tus libros favoritos!
-            </p> <!-- desc. -->
-            <p>
-                <a style="font-family: Arial, Helvetica, sans-serif; margin-top: 10px" href="/Productos" class="btn btn-outline-primary btn-lg shadow-sm">
-                    Explorar Catálogo <i class="fas fa-book-open"></i>
-                </a>
-            </p> <!-- btn => /Productos/Index -->
+        <!-- MENSAJE DE BIENVENIDA. -->
+        <section class="row text-center py-5" aria-labelledby="ufibreriaTitle" style="background-color: #f8f9fa; margin-right:0px;">
+            <div class="col-12">
+                <img src="~/img/open-book.png" width="250" style="margin-bottom: 25px; margin-top: 30px" /> <!-- Logo Sitio. -->
+                <h1 id="title" class="display-4" style="font-family: Arial, Helvetica, sans-serif">UFIBRERÍA</h1> <!-- Título. -->
+                <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px">
+                    ¡Bienvenidos a UFIBRERÍA, la librería digital que <br />
+                    moderniza la forma en que disfrutas de tus libros favoritos!
+                </p> <!-- desc. -->
+                <p>
+                    <a style="font-family: Arial, Helvetica, sans-serif; margin-top: 10px" href="/Productos" class="btn btn-outline-primary btn-lg shadow-sm">
+                        Explorar Catálogo
+                    </a>
+                </p> <!-- btn => /Productos/Index -->
+            </div>
+        </section>
+
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- USUARIO NO REGISTRADO? -->
+        <section class="row text-center py-5" aria-labelledby="ufibreriaTitle">
+            <div class="col-12">
+                <img src="~/img/user.png" width="100" style="margin-bottom: 25px; margin-top: 30px" /> <!-- user.png -->
+                <h2 style="font-family: Arial, Helvetica, sans-serif">¿Aún no estás Registrado?</h2> <!-- Título. -->
+                <p style="font-family: Arial, Helvetica, sans-serif">
+                    Regístrate y crea tu perfil en UFIBRERÍA para disfrutar de una experiencia<br />
+                    personalizada. Accede a promociones y mantén un historial de tus compras.
+                </p> <!-- desc. -->
+                <p>
+                    <a style="font-family: Arial, Helvetica, sans-serif;" href="/Account/Register" class="btn btn-outline-primary shadow-sm">
+                        Registrarse
+                    </a>
+                </p> <!-- btn => /Account/Register -->
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 25px">
+            <img src="~/img/arrow-down.png" width="50" />
         </div>
-    </section>
 
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <!-- USUARIO NO REGISTRADO? -->
-    <section class="row text-center py-5" aria-labelledby="ufibreriaTitle" ;">
-        <div class="col-12">
-            <img src="~/img/user.png" width="100" style="margin-bottom: 25px; margin-top: 30px" /> <!-- user.png -->
-            <h2 style="font-family: Arial, Helvetica, sans-serif">¿Aún no estás Registrado?</h2> <!-- Título. -->
-            <p style="font-family: Arial, Helvetica, sans-serif">
-                Regístrate y crea tu perfil en UFIBRERÍA para disfrutar de una experiencia<br />
-                personalizada. Accede a promociones y mantén un historial de tus compras.
-            </p> <!-- desc. -->
-            <p>
-                <a style="font-family: Arial, Helvetica, sans-serif;" href="/Account/Register" class="btn btn-outline-primary shadow-sm">
-                    Registrarse <i class="fas fa-book-open"></i>
-                </a>
-            </p> <!-- btn => /Account/Register -->
-        </div>
-    </section>
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- SECCIONES DE LIBROS -->
+        <section id="libros" class="py-5" style="">
+            <div class="container">
+                <h2 class="teOfrecemos">Te Ofrecemos...</h2> <!-- Título. -->
+                <p style="color: #0d6efd; text-decoration: underline; font-size: 48px; text-align: center; margin-top: -40px">
+                    <!-- Línea Azul. -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </p>
 
-    <div style="text-align: center; margin-top: 25px">
-        <img src="~/img/arrow-down.png" width="50" />
-    </div>
+                <!-- /// Sección de Cards. /// -->
 
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <!-- SECCIONES DE LIBROS -->
-    <section id="libros" class="py-5" style="">
-        <div class="container">
-            <h2 class="teOfrecemos">Te Ofrecemos...</h2> <!-- Título. -->
-            <p style="color: #0d6efd; text-decoration: underline; font-size: 48px; text-align: center; margin-top: -40px">
-                <!-- Línea Azul. -->
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </p>
-
-            <!-- /// Sección de Cards. /// -->
-
-            <div class="row">
-                <!-- Ciencia Ficción -->
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 0;">
-                        <img src="~/img/dune.png"
-                             class="card-img-top img-fluid fixed-image"
-                             alt="CienciaFicción" style="border-radius: 0;">
-                        <div class="card-body p-2">
-                            <h5 class="mb-2">Ciencia Ficción.</h5>
-                            <p class="mb-2" style="text-align: justify; font-size: 0.9rem; margin-bottom: 0">
-                                Explora mundos futuristas, tecnología avanzada y aventuras épicas con nuestra colección de ciencia ficción.
-                            </p>
-                            <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
-                                Ver más
-                            </a>
+                <div class="row">
+                    <!-- Ciencia Ficción -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 shadow-sm" style="border-radius: 0;">
+                            <img src="~/img/dune.png"
+                                 class="card-img-top img-fluid fixed-image"
+                                 alt="CienciaFicción" style="border-radius: 0;">
+                            <div class="card-body p-2">
+                                <h5 class="mb-2">Ciencia Ficción.</h5>
+                                <p class="mb-2" style="text-align: justify; font-size: 0.9rem; margin-bottom: 0">
+                                    Explora mundos futuristas, tecnología avanzada y aventuras épicas con nuestra colección de ciencia ficción.
+                                </p>
+                                <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Fantasía. -->
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 0;">
-                        <img src="~/img/reliquias.png"
-                             class="card-img-top img-fluid fixed-image"
-                             alt="Fantasia" style="border-radius: 0;">
-                        <div class="card-body p-2">
-                            <h5 class="mb-2">Fantasía.</h5>
-                            <p class="mb-2" style="text-align: justify; font-size: 0.9rem;">
-                                Descubre reinos mágicos, héroes valientes y criaturas míticas en nuestra fascinante colección de fantasía.
-                            </p>
-                            <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
-                                Ver más
-                            </a>
+                    <!-- Fantasía. -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 shadow-sm" style="border-radius: 0;">
+                            <img src="~/img/reliquias.png"
+                                 class="card-img-top img-fluid fixed-image"
+                                 alt="Fantasia" style="border-radius: 0;">
+                            <div class="card-body p-2">
+                                <h5 class="mb-2">Fantasía.</h5>
+                                <p class="mb-2" style="text-align: justify; font-size: 0.9rem;">
+                                    Descubre reinos mágicos, héroes valientes y criaturas míticas en nuestra fascinante colección de fantasía.
+                                </p>
+                                <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Comics. -->
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 0;">
-                        <img src="~/img/absolute-batman.png"
-                             class="card-img-top img-fluid fixed-image"
-                             alt="Comics" style="border-radius: 0;">
-                        <div class="card-body p-2">
-                            <h5 class="mb-2">Comics.</h5>
-                            <p class="mb-2" style="text-align: justify; font-size: 0.9rem;">
-                                Sumérgete en historias vibrantes de superhéroes y aventuras épicas en nuestra colección de cómics.
-                            </p>
-                            <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
-                                Ver más
-                            </a>
+                    <!-- Comics. -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 shadow-sm" style="border-radius: 0;">
+                            <img src="~/img/absolute-batman.png"
+                                 class="card-img-top img-fluid fixed-image"
+                                 alt="Comics" style="border-radius: 0;">
+                            <div class="card-body p-2">
+                                <h5 class="mb-2">Comics.</h5>
+                                <p class="mb-2" style="text-align: justify; font-size: 0.9rem;">
+                                    Sumérgete en historias vibrantes de superhéroes y aventuras épicas en nuestra colección de cómics.
+                                </p>
+                                <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Libros Infantiles. -->
-                <div class="col-md-3 mb-4">
-                    <div class="card h-100 shadow-sm" style="border-radius: 0;">
-                        <img src="~/img/diario-greg.png"
-                             class="card-img-top img-fluid fixed-image"
-                             alt="Infantiles" style="border-radius: 0;">
-                        <div class="card-body p-2">
-                            <h5 class="mb-2">Infantiles.</h5>
-                            <p class="mb-2" style="text-align: justify; font-size: 0.9rem;">
-                                Fomenta la imaginación con cuentos mágicos, personajes encantadores y aprendizajes divertidos.
-                            </p>
-                            <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
-                                Ver más
-                            </a>
+                    <!-- Libros Infantiles. -->
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 shadow-sm" style="border-radius: 0;">
+                            <img src="~/img/diario-greg.png"
+                                 class="card-img-top img-fluid fixed-image"
+                                 alt="Infantiles" style="border-radius: 0;">
+                            <div class="card-body p-2">
+                                <h5 class="mb-2">Infantiles.</h5>
+                                <p class="mb-2" style="text-align: justify; font-size: 0.9rem;">
+                                    Fomenta la imaginación con cuentos mágicos, personajes encantadores y aprendizajes divertidos.
+                                </p>
+                                <a href="/Productos" class="btn btn-outline-primary btn-sm mt-auto" style="display: flex; flex-direction: column;">
+                                    Ver más
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-    <section id="contacto" class="py-5" style="background-color: #0d6efd;">
-        <div class="container">
-            <h2 class="contactanos" style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: white;">¡Contáctanos!</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-3">
-                    <div class="card shadow-sm p-4">
-                        <form>
-                            <div class="row mb-3 align-items-start">
-                                <div class="col-md-12">
-                                    <label for="nombre" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+        <section id="contacto" class="py-5" style="background-color: #0d6efd;">
+            <div class="container">
+                <h2 class="contactanos" style="text-align: center; font-size: 2rem; margin-bottom: 40px; color: white;">¡Contáctanos!</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 col-lg-3">
+                        <div class="card shadow-sm p-4">
+                            <form>
+                                <div class="row mb-3 align-items-start">
+                                    <div class="col-md-12">
+                                        <label for="nombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <label for="email" class="form-label">Correo Electrónico</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico">
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="email" class="form-label">Correo Electrónico</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Tu correo electrónico">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row mb-3">
-                                <div class="col-md-12">
-                                    <label for="mensaje" class="form-label">Mensjae</label>
-                                    <textarea class="form-control" id="mensaje" style="height: 150px;" placeholder="Digita tu mensaje"></textarea>
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="mensaje" class="form-label">Mensjae</label>
+                                        <textarea class="form-control" id="mensaje" style="height: 150px;" placeholder="Digita tu mensaje"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary w-100">Enviar Mensaje</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-
-
-
-
-</main>
+        </section>
+    </main>
