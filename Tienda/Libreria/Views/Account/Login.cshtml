@@ -6,6 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html, body {
             height: 100%;
@@ -28,43 +29,75 @@
             text-align: center;
             padding: 1rem 0;
         }
+
+        .input-group-text {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .btn-m {
+            width: 100%;
+        }
+
+        .input-group {
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
 </head>
 <body>
     <div class="container my-4">
         <main class="container py-5" aria-labelledby="title">
-            <div class="text-center mb-4">
-                <h2 id="title" class="fw-bold text-primary">@ViewBag.Title</h2>
-                <p class="text-muted">Accede con tus credenciales o regístrate para crear una cuenta.</p>
-            </div>
             <div class="row justify-content-center">
-                <div class="col-md-6">
-                    <div class="card shadow-sm">
-                        <div class="card-body">
+                <div class="col-md-4">
+                    <div class="card shadow-sm" style="margin-top: 30px; margin-bottom: 30px;">
+                        <div class="card-body" style="margin-top: 20px; margin-bottom: 20px;">
                             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
                             {
                                 @Html.AntiForgeryToken()
-                                <h4 class="text-center mb-4 text-secondary">Inicio de sesión</h4>
-                                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+                                <h2 id="title" class="fw-bold text-primary text-center mb-lg-4">@ViewBag.Title</h2>
+                                <div style="margin-left: 40px; margin-right: 40px; font-size: 16px;">
+                                    @if (ViewData.ModelState.Any(ms => ms.Value.Errors.Any()))
+                                    {
+                                        <div class="alert alert-danger">
+                                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                                            {
+                                                <p style="margin-bottom: 2px;">@error.ErrorMessage</p>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+
 
                                 <div class="mb-3">
-                                    @Html.LabelFor(m => m.Email, "Correo electrónico", new { @class = "form-label" })
-                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Ingrese su correo electrónico" })
+                                    <div style="margin-left: 40px">
+                                        @Html.LabelFor(m => m.Email, "Correo electrónico", new { @class = "form-label" })
+                                    </div>
+                                    <div class="input-group mx-auto">
+                                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Ingrese su correo electrónico" })
+                                    </div>
                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                 </div>
 
                                 <div class="mb-3">
-                                    @Html.LabelFor(m => m.Password, "Contraseña", new { @class = "form-label" })
-                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Ingrese su contraseña" })
+                                    <div style="margin-left: 40px">
+                                        @Html.LabelFor(m => m.Password, "Contraseña", new { @class = "form-label" })
+                                    </div>
+                                    <div class="input-group mx-auto">
+                                        <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Ingrese su contraseña" })
+                                    </div>
                                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                 </div>
 
-                                <div class="form-check mb-3">
+                                <div class="form-check mb-3" style="margin-left:38px;">
                                     @Html.CheckBoxFor(m => m.RememberMe, new { @class = "form-check-input" })
                                     @Html.LabelFor(m => m.RememberMe, "Recordarme", new { @class = "form-check-label" })
                                 </div>
 
-                                <div class="d-grid">
+                                <div style="text-align: center">
                                     <button type="submit" class="btn btn-primary">Iniciar sesión</button>
                                 </div>
 
@@ -72,21 +105,10 @@
                                     <p>
                                         ¿No tienes cuenta? @Html.ActionLink("Regístrate aquí", "Register", new { @class = "text-primary fw-bold" })
                                     </p>
-                                    @* Habilite esta opción una vez tenga la confirmación de la cuenta habilitada para la funcionalidad de restablecimiento de contraseña
-                                        <p>
-                                            @Html.ActionLink("¿Olvidaste tu contraseña?", "ForgotPassword", new { @class = "text-secondary" })
-                                        </p>
-                                    *@
                                 </div>
                             }
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 text-center mt-4">
-                    <section id="socialLoginForm">
-                        <h5 class="text-secondary mb-3">Inicia sesión con redes sociales</h5>
-                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                    </section>
                 </div>
             </div>
         </main>
@@ -94,5 +116,5 @@
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
         }
-        </div>
+    </div>
 </body>

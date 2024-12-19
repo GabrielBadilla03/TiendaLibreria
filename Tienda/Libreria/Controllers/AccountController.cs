@@ -158,29 +158,42 @@ namespace Libreria.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                // Verificar si el nombre de usuario ya existe
+                var existingUserName = await UserManager.FindByNameAsync(model.UserName);
+                if (existingUserName != null)
                 {
-                    string defaultRole = "User";
-                    await UserManager.AddToRoleAsync(user.Id, defaultRole);
-
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // Para obtener más información sobre cómo habilitar la confirmación de cuentas y el restablecimiento de contraseña, visite https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Enviar un correo electrónico con este vínculo
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirmar la cuenta", "Para confirmar su cuenta, haga clic <a href=\"" + callbackUrl + "\">aquí</a>");
-
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError("UserName", "El nombre de usuario ya está en uso.");
                 }
-                AddErrors(result);
+
+                // Verificar si el correo ya existe
+                var existingEmail = await UserManager.FindByEmailAsync(model.Email);
+                if (existingEmail != null)
+                {
+                    ModelState.AddModelError("Email", "El correo electrónico ya está en uso.");
+                }
+
+                if (ModelState.IsValid) // Verificar si aún hay errores después de las validaciones
+                {
+                    var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
+                    var result = await UserManager.CreateAsync(user, model.Password);
+
+                    if (result.Succeeded)
+                    {
+                        string defaultRole = "User";
+                        await UserManager.AddToRoleAsync(user.Id, defaultRole);
+
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        return RedirectToAction("Index", "Home");
+                    }
+
+                    AddErrors(result); // Agregar errores específicos de la creación del usuario
+                }
             }
 
-            // Si llegamos a este punto, es que se ha producido un error y volvemos a mostrar el formulario
+            // Si llegamos aquí, mostrar errores y volver a la vista
             return View(model);
         }
+
 
         //
         // GET: /Account/ConfirmEmail
